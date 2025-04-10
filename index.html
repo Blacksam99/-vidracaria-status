@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vidraçaria Status - 10 anos de experiência em São José do Rio Preto. Especialistas em box, portas e janelas de vidro temperado. Atendemos toda região!">
-    <title>Vidraçaria Status - São José do Rio Preto | 10 Anos de Qualidade</title>
+    <meta name="description" content="Vidraçaria Status - Especialistas em Vidros Temperados em São José do Rio Preto. 10 anos de experiência e garantia. Orçamento grátis!">
+    <title>Vidraçaria Status | Especialistas em Vidros Temperados - São José do Rio Preto</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #005f73;
-            --secondary-color: #0a9396;
-            --accent-color: #ee9b00;
-            --dark-color: #001219;
-            --light-color: #e9ecef;
+            --primary-color: #00425A;
+            --secondary-color: #1F8A70;
+            --accent-color: #FC7300;
+            --dark-color: #001B29;
+            --light-color: #f8f9fa;
         }
 
         * {
@@ -35,7 +35,48 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .guarantee-badge {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .guarantee-badge span {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .guarantee-badge small {
+            font-size: 0.8rem;
         }
 
         .header-content {
@@ -66,7 +107,7 @@
         }
         
         .hero {
-            background: linear-gradient(rgba(0,18,25,0.8), rgba(0,95,115,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c');
+            background: linear-gradient(rgba(0,27,41,0.8), rgba(0,66,90,0.9)), url('https://images.unsplash.com/photo-1497366216548-37526070297c');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -105,17 +146,44 @@
 
         .cta-button i {
             margin-right: 10px;
+            font-size: 1.4rem;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-            background: #f4a261;
+            background: #fd8a2a;
+        }
+
+        .benefits-section {
+            padding: 4rem 0;
+            background: var(--light-color);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
         }
         
         .services {
             padding: 6rem 0;
-            background: var(--light-color);
+            background: white;
         }
         
         .section-title {
@@ -123,6 +191,13 @@
             margin-bottom: 3rem;
             color: var(--primary-color);
             font-size: 2.5rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
         }
         
         .services-grid {
@@ -132,16 +207,18 @@
         }
         
         .service-card {
-            background: white;
+            background: var(--light-color);
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            border: 2px solid transparent;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
+            border-color: var(--secondary-color);
         }
         
         .service-card i {
@@ -155,46 +232,73 @@
             margin-bottom: 1rem;
         }
 
-        .about-section {
+        .guarantee-section {
             padding: 6rem 0;
-            background: white;
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
         }
 
-        .about-content {
+        .guarantee-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .guarantee-features {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
-        .about-text {
+        .guarantee-feature {
             padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
         }
 
-        .about-text h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .features-list {
-            list-style: none;
-            margin-top: 2rem;
-        }
-
-        .features-list li {
+        .guarantee-feature i {
+            font-size: 2.5rem;
+            color: var(--accent-color);
             margin-bottom: 1rem;
+        }
+
+        .process-section {
+            padding: 6rem 0;
+            background: var(--light-color);
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-step {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-        }
-
-        .features-list i {
-            color: var(--accent-color);
-            margin-right: 1rem;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: bold;
         }
         
         .contact {
             padding: 6rem 0;
-            background: var(--primary-color);
+            background: var(--dark-color);
             color: white;
         }
         
@@ -227,10 +331,27 @@
             font-size: 1.5rem;
         }
 
-        .service-area {
+        .payment-methods {
             background: rgba(255,255,255,0.1);
             padding: 2rem;
             border-radius: 15px;
+        }
+
+        .payment-methods h3 {
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .payment-icons i {
+            font-size: 2rem;
+            color: var(--accent-color);
         }
         
         footer {
@@ -238,6 +359,7 @@
             color: white;
             text-align: center;
             padding: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
         @media (max-width: 768px) {
@@ -245,16 +367,12 @@
                 font-size: 2rem;
             }
             
-            .services-grid {
+            .services-grid, .contact-container {
                 grid-template-columns: 1fr;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
+            .guarantee-badge {
+                display: none;
             }
 
             .experience-badge {
@@ -273,10 +391,15 @@
         </div>
     </header>
 
+    <div class="guarantee-badge">
+        <span>10 ANOS</span>
+        <small>de Garantia</small>
+    </div>
+
     <section class="hero">
         <div class="container">
-            <h1>Vidraçaria Status</h1>
-            <p>10 anos transformando ambientes com qualidade e profissionalismo</p>
+            <h1>Especialistas em Vidros Temperados</h1>
+            <p>Qualidade, segurança e elegância para seu ambiente</p>
             <a href="https://wa.me/5517991292282" class="cta-button">
                 <i class="fab fa-whatsapp"></i>
                 Solicite um Orçamento Grátis
@@ -284,19 +407,48 @@
         </div>
     </section>
 
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title">Por que escolher a Vidraçaria Status?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>10 Anos de Garantia</h3>
+                    <p>Garantia real em todos os serviços</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>Entrega Rápida</h3>
+                    <p>10 a 15 dias após confirmação</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Facilidade no Pagamento</h3>
+                    <p>Aceitamos todas as formas de pagamento</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Atendimento Regional</h3>
+                    <p>São José do Rio Preto e região (10km)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="services">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
+            <h2 class="section-title">Soluções em Vidro Temperado</h2>
+            <p class="section-subtitle">Trabalhamos exclusivamente com vidros temperados da mais alta qualidade</p>
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fas fa-shower"></i>
                     <h3>Box para Banheiro</h3>
-                    <p>Box em vidro temperado com instalação profissional e garantia</p>
+                    <p>Box em vidro temperado com perfis em alumínio ou sistema autoportante</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-door-open"></i>
                     <h3>Portas de Vidro</h3>
-                    <p>Portas em vidro temperado para residências e comércios</p>
+                    <p>Portas em vidro temperado com ferragens de primeira linha</p>
                 </div>
                 <div class="service-card">
                     <i class="fas fa-window-maximize"></i>
@@ -306,35 +458,61 @@
                 <div class="service-card">
                     <i class="fas fa-building"></i>
                     <h3>Fachadas</h3>
-                    <p>Soluções completas em vidros para fachadas comerciais</p>
+                    <p>Fachadas comerciais em vidro temperado</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about-section">
+    <section class="guarantee-section">
         <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Por que escolher a Vidraçaria Status?</h2>
-                    <p>Com 10 anos de experiência no mercado, somos referência em soluções em vidro em São José do Rio Preto e região. Nossa equipe altamente qualificada está pronta para transformar seu ambiente com as melhores soluções em vidros.</p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-check-circle"></i>10 anos de experiência no mercado</li>
-                        <li><i class="fas fa-check-circle"></i>Profissionais altamente qualificados</li>
-                        <li><i class="fas fa-check-circle"></i>Materiais de primeira qualidade</li>
-                        <li><i class="fas fa-check-circle"></i>Garantia em todos os serviços</li>
-                        <li><i class="fas fa-check-circle"></i>Atendimento personalizado</li>
-                        <li><i class="fas fa-check-circle"></i>Orçamento sem compromisso</li>
-                    </ul>
+            <div class="guarantee-content">
+                <h2 class="section-title" style="color: white;">Garantia de 10 Anos</h2>
+                <p>Oferecemos a melhor garantia do mercado porque confiamos na qualidade do nosso trabalho</p>
+                <div class="guarantee-features">
+                    <div class="guarantee-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Qualidade Garantida</h3>
+                        <p>Vidros temperados certificados</p>
+                    </div>
+                    <div class="guarantee-feature">
+                        <i class="fas fa-tools"></i>
+                        <h3>Assistência Técnica</h3>
+                        <p>Suporte durante toda garantia</p>
+                    </div>
+                    <div class="guarantee-feature">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certificação</h3>
+                        <p>Produtos com selo de qualidade</p>
+                    </div>
                 </div>
-                <div class="service-area">
-                    <h3>Área de Atendimento</h3>
-                    <p>Atendemos São José do Rio Preto e região em um raio de 10km, garantindo:</p>
-                    <ul class="features-list">
-                        <li><i class="fas fa-map-marker-alt"></i>Entrega rápida</li>
-                        <li><i class="fas fa-truck"></i>Instalação profissional</li>
-                        <li><i class="fas fa-tools"></i>Assistência técnica</li>
-                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Orçamento</h3>
+                    <p>Entre em contato via WhatsApp ou telefone</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Medição</h3>
+                    <p>Visita técnica para medições precisas</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Produção</h3>
+                    <p>10-15 dias após confirmação do pedido</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Instalação</h3>
+                    <p>Instalação profissional com garantia</p>
                 </div>
             </div>
         </div>
@@ -342,7 +520,7 @@
 
     <section class="contact">
         <div class="container">
-            <h2 class="section-title">Entre em Contato</h2>
+            <h2 class="section-title" style="color: white;">Entre em Contato</h2>
             <div class="contact-container">
                 <div class="contact-info">
                     <h3>Informações de Contato</h3>
@@ -359,13 +537,19 @@
                         <p>Rua José Joaquim Gonsalves, 934<br>CEP: 15044-250<br>São José do Rio Preto - SP</p>
                     </div>
                 </div>
-                <div class="service-area">
-                    <h3>Horário de Atendimento</h3>
-                    <p>Segunda a Sexta: 8h às 18h<br>Sábado: 8h às 12h</p>
-                    <div class="cta-container" style="margin-top: 2rem; text-align: center;">
+                <div class="payment-methods">
+                    <h3>Formas de Pagamento</h3>
+                    <p>Aceitamos todas as formas de pagamento:</p>
+                    <div class="payment-icons">
+                        <i class="fas fa-money-bill-wave" title="Dinheiro"></i>
+                        <i class="fas fa-credit-card" title="Cartão de Crédito"></i>
+                        <i class="fas fa-money-check" title="Cartão de Débito"></i>
+                        <i class="fab fa-pix" title="PIX"></i>
+                    </div>
+                    <div style="margin-top: 2rem;">
                         <a href="https://wa.me/5517991292282" class="cta-button">
                             <i class="fab fa-whatsapp"></i>
-                            Chame no WhatsApp
+                            Solicitar Orçamento
                         </a>
                     </div>
                 </div>
@@ -375,7 +559,8 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Vidraçaria Status - 10 Anos de Tradição e Qualidade</p>
+            <p>&copy; 2024 Vidraçaria Status - Especialistas em Vidros Temperados</p>
+            <p>10 Anos de Experiência | 10 Anos de Garantia</p>
             <p>São José do Rio Preto - SP</p>
         </div>
     </footer>
